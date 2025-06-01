@@ -1,0 +1,1754 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fuad Musa - Creative Developer | Problem Solver</title>
+    <meta
+      name="description"
+      content="Fuad Musa - Information Systems Professional specializing in web development, database design, and mobile applications. Available for freelance projects."
+    />
+    <meta
+      name="keywords"
+      content="web developer, information systems, freelance, PHP, MySQL, JavaScript, React, Python"
+    />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Fuad Musa - Creative Developer | Problem Solver"
+    />
+    <meta
+      property="og:description"
+      content="Information Systems Professional specializing in web development and database design"
+    />
+    <meta property="og:url" content="https://fuadmusa.dev" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+      :root {
+        --primary-color: #3b82f6;
+        --secondary-color: #1e40af;
+        --accent-color: #f59e0b;
+        --success-color: #10b981;
+        --warning-color: #f59e0b;
+        --error-color: #ef4444;
+        --text-primary: #1f2937;
+        --text-secondary: #6b7280;
+        --bg-primary: #ffffff;
+        --bg-secondary: #f9fafb;
+        --bg-tertiary: #f3f4f6;
+        --border-color: #e5e7eb;
+        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+
+      [data-theme="dark"] {
+        --primary-color: #60a5fa;
+        --secondary-color: #3b82f6;
+        --accent-color: #fbbf24;
+        --success-color: #34d399;
+        --warning-color: #fbbf24;
+        --error-color: #f87171;
+        --text-primary: #f9fafb;
+        --text-secondary: #d1d5db;
+        --bg-primary: #0f172a;
+        --bg-secondary: #1e293b;
+        --bg-tertiary: #334155;
+        --border-color: #475569;
+        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+        --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+      }
+
+      * {
+        transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        transition: all 0.3s ease;
+      }
+
+      .gradient-bg {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--secondary-color) 50%,
+          #8b5cf6 100%
+        );
+      }
+
+      .gradient-text {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .card-hover {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid var(--border-color);
+        background-color: var(--bg-primary);
+      }
+
+      .card-hover:hover {
+        transform: translateY(-12px) scale(1.02);
+        box-shadow: var(--shadow-xl);
+        border-color: var(--primary-color);
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .skill-icon {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        background-color: var(--bg-secondary);
+        border: 2px solid var(--border-color);
+      }
+
+      .skill-icon:hover {
+        transform: scale(1.15) rotate(5deg);
+        border-color: var(--accent-color);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .navbar-blur {
+        backdrop-filter: blur(20px);
+        background-color: rgba(255, 255, 255, 0.85);
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      [data-theme="dark"] .navbar-blur {
+        background-color: rgba(15, 23, 42, 0.85);
+      }
+
+      .typing-animation {
+        border-right: 3px solid var(--accent-color);
+        animation: blink 1.2s infinite;
+        min-height: 1.5em;
+      }
+
+      @keyframes blink {
+        0%, 50% { border-color: var(--accent-color); }
+        51%, 100% { border-color: transparent; }
+      }
+
+      .nav-link {
+        color: var(--text-secondary);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .nav-link:hover {
+        color: var(--primary-color);
+      }
+
+      .nav-link.active {
+        color: var(--primary-color);
+        background-color: var(--bg-secondary);
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .btn-secondary {
+        background-color: transparent;
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+        transition: all 0.3s ease;
+      }
+
+      .btn-secondary:hover {
+        background-color: var(--primary-color);
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      .progress-bar {
+        background-color: var(--bg-tertiary);
+        border-radius: 1rem;
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        transition: width 2s ease-in-out;
+      }
+
+      .filter-btn {
+        color: var(--text-secondary);
+        background-color: transparent;
+        transition: all 0.3s ease;
+      }
+
+      .filter-btn.active {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        box-shadow: var(--shadow-md);
+      }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      [data-theme="dark"] .glass-card {
+        background: rgba(15, 23, 42, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .floating-animation {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+      }
+
+      .pulse-animation {
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+      }
+
+      /* Enhanced form styles */
+      .form-input {
+        background-color: var(--bg-primary);
+        border: 2px solid var(--border-color);
+        color: var(--text-primary);
+        transition: all 0.3s ease;
+      }
+
+      .form-input:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        outline: none;
+      }
+
+      /* Smooth transitions for theme switching */
+      .theme-transition {
+        transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      /* Enhanced mobile responsiveness */
+      @media (max-width: 768px) {
+        .card-hover:hover {
+          transform: translateY(-6px) scale(1.01);
+        }
+        
+        .skill-icon:hover {
+          transform: scale(1.1);
+        }
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--bg-secondary);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--primary-color);
+        border-radius: 4px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--secondary-color);
+      }
+    </style>
+  </head>
+  <body class="font-sans theme-transition">
+    <!-- Navigation -->
+    <nav
+      id="navbar"
+      class="fixed w-full top-0 z-50 transition-all duration-300 theme-transition"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center">
+            <div class="text-xl font-bold">
+              <span class="gradient-text">FM</span>
+            </div>
+          </div>
+
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-4">
+              <a
+                href="#home"
+                class="nav-link px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 theme-transition"
+                >Home</a
+              >
+              <a
+                href="#about"
+                class="nav-link px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 theme-transition"
+                >About</a
+              >
+              <a
+                href="#skills"
+                class="nav-link px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 theme-transition"
+                >Skills</a
+              >
+              <a
+                href="#projects"
+                class="nav-link px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 theme-transition"
+                >Projects</a
+              >
+              <a
+                href="#services"
+                class="nav-link px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 theme-transition"
+                >Services</a
+              >
+              <a
+                href="#blog"
+                class="nav-link px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 theme-transition"
+                >Blog</a
+              >
+              <a
+                href="#contact"
+                class="nav-link px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 theme-transition"
+                >Contact</a
+              >
+            </div>
+          </div>
+
+          <div class="flex items-center space-x-4">
+            <button
+              id="theme-toggle"
+              class="p-2 rounded-lg transition-all duration-200 theme-transition hover:scale-110"
+              style="background-color: var(--bg-secondary); color: var(--text-primary);"
+            >
+              <i id="theme-icon-moon" class="fas fa-moon"></i>
+              <i id="theme-icon-sun" class="fas fa-sun hidden"></i>
+            </button>
+
+            <div class="md:hidden">
+              <button id="mobile-menu-btn" class="p-2 theme-transition" style="color: var(--text-primary);">
+                <i class="fas fa-bars"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="md:hidden hidden theme-transition">
+        <div
+          class="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-lg theme-transition"
+          style="background-color: var(--bg-primary); border: 1px solid var(--border-color);"
+        >
+          <a
+            href="#home"
+            class="block px-3 py-2 rounded-md text-base font-medium theme-transition nav-link"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="block px-3 py-2 rounded-md text-base font-medium theme-transition nav-link"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="block px-3 py-2 rounded-md text-base font-medium theme-transition nav-link"
+            >Skills</a
+          >
+          <a
+            href="#projects"
+            class="block px-3 py-2 rounded-md text-base font-medium theme-transition nav-link"
+            >Projects</a
+          >
+          <a
+            href="#services"
+            class="block px-3 py-2 rounded-md text-base font-medium theme-transition nav-link"
+            >Services</a
+          >
+          <a
+            href="#blog"
+            class="block px-3 py-2 rounded-md text-base font-medium theme-transition nav-link"
+            >Blog</a
+          >
+          <a
+            href="#contact"
+            class="block px-3 py-2 rounded-md text-base font-medium theme-transition nav-link"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="min-h-screen flex items-center justify-center gradient-bg relative overflow-hidden"
+    >
+      <div class="absolute inset-0 bg-black opacity-20"></div>
+      <div class="container mx-auto px-4 text-center relative z-10">
+        <div class="fade-in">
+          <!-- Professional Avatar -->
+          <div
+            class="w-48 h-48 mx-auto mb-8 rounded-full bg-white shadow-2xl flex items-center justify-center floating-animation"
+          >
+            <div class="w-40 h-40 rounded-full overflow-hidden">
+              <img
+                src="/fuadMusa/images/Fuad-Image.jpg"
+                alt="Fuad's Image"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <h1 class="text-5xl md:text-7xl font-bold text-white mb-4 animate-fade-in">
+            Fuad Musa
+          </h1>
+          <p
+            id="typing-text"
+            class="text-xl md:text-2xl text-white mb-8 typing-animation font-medium"
+          >
+            Creative Developer | Problem Solver
+          </p>
+          <p class="text-lg text-white opacity-90 mb-8 max-w-2xl mx-auto leading-relaxed">
+            Information Systems Professional passionate about creating
+            innovative web solutions and solving complex problems through
+            technology.
+          </p>
+
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          >
+            <a
+              href="#projects"
+              class="btn-primary px-8 py-4 rounded-full font-semibold text-lg shadow-lg"
+            >
+              View My Work
+            </a>
+            <a
+              href="#contact"
+              class="btn-secondary px-8 py-4 rounded-full font-semibold text-lg"
+            >
+              Hire Me
+            </a>
+            <a
+              href="/fuadMusa/assets/fuadMusa-cv.pdf"
+              download
+              class="flex items-center gap-2 px-6 py-4 rounded-full font-semibold transition-all duration-300 text-lg shadow-lg"
+              style="background: linear-gradient(135deg, var(--warning-color), #f97316); color: white;"
+            >
+              <i class="fas fa-download"></i>
+              Download CV
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 theme-transition" style="background-color: var(--bg-secondary);">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-4xl font-bold text-center mb-12 fade-in gradient-text">About Me</h2>
+
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="fade-in">
+              <div
+                class="w-full h-96 gradient-bg rounded-2xl shadow-xl flex items-center justify-center overflow-hidden floating-animation"
+              >
+                <img
+                  src="/fuadMusa/images/Fuad-Image.jpg"
+                  alt="Fuad's Image"
+                  class="h-full object-cover rounded-2xl"
+                />
+              </div>
+            </div>
+
+            <div class="fade-in">
+              <h3 class="text-2xl font-semibold mb-6" style="color: var(--primary-color);">
+                Information Systems Professional
+              </h3>
+              <p class="mb-6 leading-relaxed theme-transition" style="color: var(--text-secondary);">
+                Welcome to my digital portfolio! I'm Fuad Musa, an Information
+                Systems graduate with a passion for creating innovative web
+                solutions and mobile applications. With expertise in both
+                frontend and backend development, I bridge the gap between
+                design and functionality.
+              </p>
+              <p class="mb-6 leading-relaxed theme-transition" style="color: var(--text-secondary);">
+                My journey in technology began during my Information Systems
+                studies, where I developed a strong foundation in database
+                design, system analysis, and software development. I specialize
+                in creating scalable web applications using modern technologies
+                like PHP, MySQL, JavaScript, and React.
+              </p>
+
+              <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="p-4 rounded-xl shadow-md card-hover theme-transition" style="background-color: var(--bg-primary);">
+                  <h4 class="font-semibold mb-2" style="color: var(--primary-color);">Education</h4>
+                  <p class="text-sm theme-transition" style="color: var(--text-secondary);">
+                    Information Systems<br />Bachelor's Degree
+                  </p>
+                </div>
+                <div class="p-4 rounded-xl shadow-md card-hover theme-transition" style="background-color: var(--bg-primary);">
+                  <h4 class="font-semibold mb-2" style="color: var(--primary-color);">Experience</h4>
+                  <p class="text-sm theme-transition" style="color: var(--text-secondary);">
+                    3+ Years<br />Web Development
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-3">
+                <span class="px-4 py-2 rounded-full text-sm font-medium" style="background-color: rgba(59, 130, 246, 0.1); color: var(--primary-color);">Problem Solver</span>
+                <span class="px-4 py-2 rounded-full text-sm font-medium" style="background-color: rgba(16, 185, 129, 0.1); color: var(--success-color);">Team Player</span>
+                <span class="px-4 py-2 rounded-full text-sm font-medium" style="background-color: rgba(139, 92, 246, 0.1); color: #8b5cf6;">Fast Learner</span>
+                <span class="px-4 py-2 rounded-full text-sm font-medium" style="background-color: rgba(245, 158, 11, 0.1); color: var(--accent-color);">Creative Thinker</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 theme-transition" style="background-color: var(--bg-primary);">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12 fade-in gradient-text">
+          Technical Skills
+        </h2>
+
+        <div class="max-w-6xl mx-auto">
+          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8">
+            <!-- Frontend Skills -->
+            <div class="text-center fade-in">
+              <div class="skill-icon w-20 h-20 mx-auto rounded-2xl flex items-center justify-center mb-4">
+                <i class="fab fa-html5 text-3xl" style="color: #e34c26;"></i>
+              </div>
+              <h3 class="font-semibold theme-transition" style="color: var(--text-primary);">HTML5</h3>
+            </div>
+
+            <div class="text-center fade-in">
+              <div class="skill-icon w-20 h-20 mx-auto rounded-2xl flex items-center justify-center mb-4">
+                <i class="fab fa-css3-alt text-3xl" style="color: #1572b6;"></i>
+              </div>
+              <h3 class="font-semibold theme-transition" style="color: var(--text-primary);">CSS3</h3>
+            </div>
+
+            <div class="text-center fade-in">
+              <div class="skill-icon w-20 h-20 mx-auto rounded-2xl flex items-center justify-center mb-4">
+                <i class="fab fa-js-square text-3xl" style="color: #f7df1e;"></i>
+              </div>
+              <h3 class="font-semibold theme-transition" style="color: var(--text-primary);">JavaScript</h3>
+            </div>
+
+            <div class="text-center fade-in">
+              <div class="skill-icon w-20 h-20 mx-auto rounded-2xl flex items-center justify-center mb-4">
+                <i class="fab fa-react text-3xl" style="color: #61dafb;"></i>
+              </div>
+              <h3 class="font-semibold theme-transition" style="color: var(--text-primary);">React</h3>
+            </div>
+
+            <!-- Backend Skills -->
+            <div class="text-center fade-in">
+              <div class="skill-icon w-20 h-20 mx-auto rounded-2xl flex items-center justify-center mb-4">
+                <i class="fab fa-php text-3xl" style="color: #777bb4;"></i>
+              </div>
+              <h3 class="font-semibold theme-transition" style="color: var(--text-primary);">PHP</h3>
+            </div>
+
+            <div class="text-center fade-in">
+              <div class="skill-icon w-20 h-20 mx-auto rounded-2xl flex items-center justify-center mb-4">
+                <i class="fas fa-database text-3xl" style="color: #336791;"></i>
+              </div>
+              <h3 class="font-semibold theme-transition" style="color: var(--text-primary);">MySQL</h3>
+            </div>
+
+            <div class="text-center fade-in">
+              <div class="skill-icon w-20 h-20 mx-auto rounded-2xl flex items-center justify-center mb-4">
+                <i class="fab fa-python text-3xl" style="color: #3776ab;"></i>
+              </div>
+              <h3 class="font-semibold theme-transition" style="color: var(--text-primary);">Python</h3>
+            </div>
+          </div>
+
+          <!-- Skill Progress Bars -->
+          <div class="mt-16 grid md:grid-cols-2 gap-8">
+            <div class="fade-in">
+              <h3 class="text-xl font-semibold mb-6 theme-transition" style="color: var(--text-primary);">Frontend Development</h3>
+              <div class="space-y-6">
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-sm font-medium theme-transition" style="color: var(--text-primary);">HTML/CSS</span>
+                    <span class="text-sm font-medium theme-transition" style="color: var(--text-secondary);">95%</span>
+                  </div>
+                  <div class="progress-bar h-3">
+                    <div class="progress-fill h-3 rounded-full" style="width: 95%"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-sm font-medium theme-transition" style="color: var(--text-primary);">JavaScript</span>
+                    <span class="text-sm font-medium theme-transition" style="color: var(--text-secondary);">90%</span>
+                  </div>
+                  <div class="progress-bar h-3">
+                    <div class="progress-fill h-3 rounded-full" style="width: 90%"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-sm font-medium theme-transition" style="color: var(--text-primary);">React</span>
+                    <span class="text-sm font-medium theme-transition" style="color: var(--text-secondary);">85%</span>
+                  </div>
+                  <div class="progress-bar h-3">
+                    <div class="progress-fill h-3 rounded-full" style="width: 85%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="fade-in">
+              <h3 class="text-xl font-semibold mb-6 theme-transition" style="color: var(--text-primary);">Backend Development</h3>
+              <div class="space-y-6">
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-sm font-medium theme-transition" style="color: var(--text-primary);">PHP</span>
+                    <span class="text-sm font-medium theme-transition" style="color: var(--text-secondary);">92%</span>
+                  </div>
+                  <div class="progress-bar h-3">
+                    <div class="progress-fill h-3 rounded-full" style="width: 92%"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-sm font-medium theme-transition" style="color: var(--text-primary);">MySQL</span>
+                    <span class="text-sm font-medium theme-transition" style="color: var(--text-secondary);">88%</span>
+                  </div>
+                  <div class="progress-bar h-3">
+                    <div class="progress-fill h-3 rounded-full" style="width: 88%"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-sm font-medium theme-transition" style="color: var(--text-primary);">Python</span>
+                    <span class="text-sm font-medium theme-transition" style="color: var(--text-secondary);">80%</span>
+                  </div>
+                  <div class="progress-bar h-3">
+                    <div class="progress-fill h-3 rounded-full" style="width: 80%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 theme-transition" style="background-color: var(--bg-secondary);">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12 fade-in gradient-text">
+          Featured Projects
+        </h2>
+
+        <!-- Project Filter -->
+        <div class="flex justify-center mb-12 fade-in">
+          <div class="p-2 rounded-2xl shadow-lg theme-transition" style="background-color: var(--bg-primary);">
+            <button
+              class="filter-btn active px-6 py-3 rounded-xl transition-all duration-300 font-medium"
+              data-filter="all"
+            >
+              All
+            </button>
+            <button
+              class="filter-btn px-6 py-3 rounded-xl transition-all duration-300 font-medium"
+              data-filter="web"
+            >
+              Web
+            </button>
+            <button
+              class="filter-btn px-6 py-3 rounded-xl transition-all duration-300 font-medium"
+              data-filter="mobile"
+            >
+              Mobile
+            </button>
+            <button
+              class="filter-btn px-6 py-3 rounded-xl transition-all duration-300 font-medium"
+              data-filter="academic"
+            >
+              Academic
+            </button>
+          </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div
+          id="projects-grid"
+          class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+        >
+          <!-- Project 1 -->
+          <div
+            class="project-card card-hover rounded-2xl shadow-lg overflow-hidden fade-in theme-transition"
+            data-category="web"
+          >
+            <div
+              class="h-48 gradient-bg flex items-center justify-center"
+            >
+              <i class="fas fa-user-cog text-white text-4xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-3 theme-transition" style="color: var(--text-primary);">
+                Smart Employee Management System
+              </h3>
+              <p class="mb-4 leading-relaxed theme-transition" style="color: var(--text-secondary);">
+                Web-based system for managing employees with attendance,
+                payroll, performance tracking, and role-based access.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 rounded-full text-xs font-medium" style="background-color: rgba(59, 130, 246, 0.1); color: var(--primary-color);">PHP</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium" style="background-color: rgba(16, 185, 129, 0.1); color: var(--success-color);">MySQL</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium" style="background-color: rgba(245, 158, 11, 0.1); color: var(--accent-color);">JavaScript</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <a
+                  href="#"
+                  class="font-semibold hover:underline"
+                  style="color: var(--primary-color);"
+                  >View Details</a
+                >
+                <div class="space-x-3">
+                  <a href="#" class="hover:scale-110 transition-transform duration-200" style="color: var(--text-secondary);"
+                    ><i class="fab fa-github text-lg"></i
+                  ></a>
+                  <a href="#" class="hover:scale-110 transition-transform duration-200" style="color: var(--text-secondary);"
+                    ><i class="fas fa-external-link-alt text-lg"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div
+            class="project-card card-hover rounded-2xl shadow-lg overflow-hidden fade-in theme-transition"
+            data-category="mobile"
+          >
+            <div
+              class="h-48 bg-gradient-to-r from-green-500 to-blue-600 flex items-center justify-center"
+            >
+              <i class="fas fa-mobile-alt text-white text-4xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-3 theme-transition" style="color: var(--text-primary);">Task Management App</h3>
+              <p class="mb-4 leading-relaxed theme-transition" style="color: var(--text-secondary);">
+                Cross-platform mobile application for task management with
+                real-time synchronization.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 rounded-full text-xs font-medium" style="background-color: rgba(59, 130, 246, 0.1); color: var(--primary-color);">React Native</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium" style="background-color: rgba(139, 92, 246, 0.1); color: #8b5cf6;">Firebase</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <a
+                  href="#"
+                  class="font-semibold hover:underline"
+                  style="color: var(--primary-color);"
+                  >View Details</a
+                >
+                <div class="space-x-3">
+                  <a href="#" class="hover:scale-110 transition-transform duration-200" style="color: var(--text-secondary);"
+                    ><i class="fab fa-github text-lg"></i
+                  ></a>
+                  <a href="#" class="hover:scale-110 transition-transform duration-200" style="color: var(--text-secondary);"
+                    ><i class="fas fa-external-link-alt text-lg"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div
+            class="project-card card-hover rounded-2xl shadow-lg overflow-hidden fade-in theme-transition"
+            data-category="academic"
+          >
+            <div
+              class="h-48 bg-gradient-to-r from-purple-500 to-pink-600 flex items-center justify-center"
+            >
+              <i class="fas fa-graduation-cap text-white text-4xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-3 theme-transition" style="color: var(--text-primary);">
+                Student Information System
+              </h3>
+              <p class="mb-4 leading-relaxed theme-transition" style="color: var(--text-secondary);">
+                Comprehensive academic project for managing student records and
+                course enrollment.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 rounded-full text-xs font-medium" style="background-color: rgba(59, 130, 246, 0.1); color: var(--primary-color);">PHP</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium" style="background-color: rgba(16, 185, 129, 0.1); color: var(--success-color);">MySQL</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium" style="background-color: rgba(239, 68, 68, 0.1); color: var(--error-color);">Bootstrap</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <a
+                  href="#"
+                  class="font-semibold hover:underline"
+                  style="color: var(--primary-color);"
+                  >View Details</a
+                >
+                <div class="space-x-3">
+                  <a href="#" class="hover:scale-110 transition-transform duration-200" style="color: var(--text-secondary);"
+                    ><i class="fab fa-github text-lg"></i
+                  ></a>
+                  <a href="#" class="hover:scale-110 transition-transform duration-200" style="color: var(--text-secondary);"
+                    ><i class="fas fa-external-link-alt text-lg"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div
+            class="project-card card-hover rounded-2xl shadow-lg overflow-hidden fade-in theme-transition"
+            data-category="web"
+          >
+            <div
+              class="h-48 bg-gradient-to-r from-red-500 to-yellow-600 flex items-center justify-center"
+            >
+              <i class="fas fa-chart-line text-white text-4xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-3 theme-transition" style="color: var(--text-primary);">Analytics Dashboard</h3>
+              <p class="mb-4 leading-relaxed theme-transition" style="color: var(--text-secondary);">
+                Real-time analytics dashboard with interactive charts and data
+                visualization.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 rounded-full text-xs font-medium" style="background-color: rgba(59, 130, 246, 0.1); color: var(--primary-color);">React</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium" style="background-color: rgba(139, 92, 246, 0.1); color: #8b5cf6;">Node.js</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium" style="background-color: rgba(16, 185, 129, 0.1); color: var(--success-color);">Chart.js</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <a
+                  href="#"
+                  class="font-semibold hover:underline"
+                  style="color: var(--primary-color);"
+                  >View Details</a
+                >
+                <div class="space-x-3">
+                  <a href="#" class="hover:scale-110 transition-transform duration-200" style="color: var(--text-secondary);"
+                    ><i class="fab fa-github text-lg"></i
+                  ></a>
+                  <a href="#" class="hover:scale-110 transition-transform duration-200" style="color: var(--text-secondary);"
+                    ><i class="fas fa-external-link-alt text-lg"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div
+            class="project-card card-hover rounded-2xl shadow-lg overflow-hidden fade-in theme-transition"
+            data-category="mobile"
+          >
+            <div
+              class="h-48 bg-gradient-to-r from-indigo-500 to-blue-600 flex items-center justify-center"
+            >
+              <i class="fas fa-camera text-white text-4xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-3 theme-transition" style="color: var(--text-primary);">Photo Gallery App</h3>
+              <p class="mb-4 leading-relaxed theme-transition" style="color: var(--text-secondary);">
+                Mobile photo gallery with cloud storage and AI-powered
+                organization features.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 rounded-full text-xs font-medium" style="background-color: rgba(59, 130, 246, 0.1); color: var(--primary-color);">Flutter</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium" style="background-color: rgba(249, 115, 22, 0.1); color: #f97316;">Firebase</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <a
+                  href="#"
+                  class="font-semibold hover:underline"
+                  style="color: var(--primary-color);"
+                  >View Details</a
+                >
+                <div class="space-x-3">
+                  <a href="#" class="hover:scale-110 transition-transform duration-200" style="color: var(--text-secondary);"
+                    ><i class="fab fa-github text-lg"></i
+                  ></a>
+                  <a href="#" class="hover:scale-110 transition-transform duration-200" style="color: var(--text-secondary);"
+                    ><i class="fas fa-external-link-alt text-lg"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div
+            class="project-card card-hover rounded-2xl shadow-lg overflow-hidden fade-in theme-transition"
+            data-category="academic"
+          >
+            <div
+              class="h-48 bg-gradient-to-r from-teal-500 to-green-600 flex items-center justify-center"
+            >
+              <i class="fas fa-database text-white text-4xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-3 theme-transition" style="color: var(--text-primary);">
+                Database Management System
+              </h3>
+              <p class="mb-4 leading-relaxed theme-transition" style="color: var(--text-secondary);">
+                Advanced database design project with complex relationships and
+                optimization techniques.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 rounded-full text-xs font-medium" style="background-color: rgba(59, 130, 246, 0.1); color: var(--primary-color);">MySQL</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium" style="background-color: rgba(16, 185, 129, 0.1); color: var(--success-color);">Python</span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium" style="background-color: rgba(107, 114, 128, 0.1); color: var(--text-secondary);">SQL</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <a
+                  href="#"
+                  class="font-semibold hover:underline"
+                  style="color: var(--primary-color);"
+                  >View Details</a
+                >
+                <div class="space-x-3">
+                  <a href="#" class="hover:scale-110 transition-transform duration-200" style="color: var(--text-secondary);"
+                    ><i class="fab fa-github text-lg"></i
+                  ></a>
+                  <a href="#" class="hover:scale-110 transition-transform duration-200" style="color: var(--text-secondary);"
+                    ><i class="fas fa-external-link-alt text-lg"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 theme-transition" style="background-color: var(--bg-primary);">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12 fade-in gradient-text">Services</h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <!-- Service 1 -->
+          <div class="p-8 rounded-2xl shadow-lg card-hover fade-in theme-transition">
+            <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.2));">
+              <i class="fas fa-code text-2xl" style="color: var(--primary-color);"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4 theme-transition" style="color: var(--text-primary);">Web Development</h3>
+            <p class="mb-6 leading-relaxed theme-transition" style="color: var(--text-secondary);">
+              Custom web applications built with modern technologies. From
+              simple websites to complex web platforms.
+            </p>
+            <ul class="text-sm space-y-3" style="color: var(--text-secondary);">
+              <li class="flex items-center">
+                <i class="fas fa-check mr-3" style="color: var(--success-color);"></i>Responsive Design
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check mr-3" style="color: var(--success-color);"></i>Full-Stack Development
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check mr-3" style="color: var(--success-color);"></i>API Integration
+              </li>
+            </ul>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="p-8 rounded-2xl shadow-lg card-hover fade-in theme-transition">
+            <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.2));">
+              <i class="fas fa-mobile-alt text-2xl" style="color: var(--success-color);"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4 theme-transition" style="color: var(--text-primary);">Mobile App Development</h3>
+            <p class="mb-6 leading-relaxed theme-transition" style="color: var(--text-secondary);">
+              Cross-platform mobile applications that work seamlessly on both
+              iOS and Android devices.
+            </p>
+            <ul class="text-sm space-y-3" style="color: var(--text-secondary);">
+              <li class="flex items-center">
+                <i class="fas fa-check mr-3" style="color: var(--success-color);"></i>React Native
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check mr-3" style="color: var(--success-color);"></i>Flutter Development
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check mr-3" style="color: var(--success-color);"></i>App Store Deployment
+              </li>
+            </ul>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="p-8 rounded-2xl shadow-lg card-hover fade-in theme-transition">
+            <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0.2));">
+              <i class="fas fa-database text-2xl" style="color: #8b5cf6;"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4 theme-transition" style="color: var(--text-primary);">Database Design</h3>
+            <p class="mb-6 leading-relaxed theme-transition" style="color: var(--text-secondary);">
+              Efficient database architecture and optimization for better
+              performance and scalability.
+            </p>
+            <ul class="text-sm space-y-3" style="color: var(--text-secondary);">
+              <li class="flex items-center">
+                <i class="fas fa-check mr-3" style="color: var(--success-color);"></i>Database Modeling
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check mr-3" style="color: var(--success-color);"></i>Performance Optimization
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check mr-3" style="color: var(--success-color);"></i>Data Migration
+              </li>
+            </ul>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="p-8 rounded-2xl shadow-lg card-hover fade-in theme-transition">
+            <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.2));">
+              <i class="fas fa-chart-line text-2xl" style="color: var(--error-color);"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4 theme-transition" style="color: var(--text-primary);">System Analysis</h3>
+            <p class="mb-6 leading-relaxed theme-transition" style="color: var(--text-secondary);">
+              Comprehensive analysis of existing systems and recommendations for
+              improvements.
+            </p>
+            <ul class="text-sm space-y-3" style="color: var(--text-secondary);">
+              <li class="flex items-center">
+                <i class="fas fa-check mr-3" style="color: var(--success-color);"></i>Requirements Analysis
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check mr-3" style="color: var(--success-color);"></i>Process Optimization
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check mr-3" style="color: var(--success-color);"></i>Technical Documentation
+              </li>
+            </ul>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="p-8 rounded-2xl shadow-lg card-hover fade-in theme-transition">
+            <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.2));">
+              <i class="fas fa-video text-2xl" style="color: var(--error-color);"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4 theme-transition" style="color: var(--text-primary);">Video Editing</h3>
+            <p class="mb-6 leading-relaxed theme-transition" style="color: var(--text-secondary);">
+              Professional video editing services for content creators, brands,
+              and marketing needs using modern tools and techniques.
+            </p>
+            <ul class="text-sm space-y-3" style="color: var(--text-secondary);">
+              <li class="flex items-center">
+                <i class="fas fa-check mr-3" style="color: var(--success-color);"></i>Cutting & Trimming
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check mr-3" style="color: var(--success-color);"></i>Transitions & Effects
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check mr-3" style="color: var(--success-color);"></i>Audio Sync & Enhancement
+              </li>
+            </ul>
+          </div>
+
+          <!-- Service 6 -->
+          <div class="p-8 rounded-2xl shadow-lg card-hover fade-in theme-transition">
+            <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style="background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(236, 72, 153, 0.2));">
+              <i class="fas fa-paint-brush text-2xl" style="color: #ec4899;"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4 theme-transition" style="color: var(--text-primary);">Graphic Designing</h3>
+            <p class="mb-6 leading-relaxed theme-transition" style="color: var(--text-secondary);">
+              Creative graphic design services to craft logos, branding, and
+              marketing materials that stand out.
+            </p>
+            <ul class="text-sm space-y-3" style="color: var(--text-secondary);">
+              <li class="flex items-center">
+                <i class="fas fa-check mr-3" style="color: var(--success-color);"></i>Logo & Branding Design
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check mr-3" style="color: var(--success-color);"></i>Marketing Collateral
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check mr-3" style="color: var(--success-color);"></i>Illustrations & Artwork
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 theme-transition" style="background-color: var(--bg-secondary);">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12 fade-in gradient-text">
+          Latest Blog Posts
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <!-- Blog Post 1 -->
+          <article class="rounded-2xl shadow-lg overflow-hidden card-hover fade-in theme-transition">
+            <div class="h-48 gradient-bg flex items-center justify-center">
+              <i class="fas fa-code text-white text-4xl"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <span class="px-3 py-1 rounded-full text-xs font-medium" style="background-color: rgba(59, 130, 246, 0.1); color: var(--primary-color);">Web Development</span>
+                <span class="text-sm ml-auto theme-transition" style="color: var(--text-secondary);">May 20, 2025</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 theme-transition" style="color: var(--text-primary);">
+                Modern PHP Development Best Practices
+              </h3>
+              <p class="mb-4 leading-relaxed theme-transition" style="color: var(--text-secondary);">
+                Explore the latest trends and best practices in PHP development,
+                including frameworks, security, and performance optimization.
+              </p>
+              <a
+                href="#"
+                class="font-semibold hover:underline inline-flex items-center"
+                style="color: var(--primary-color);"
+                >Read More <i class="fas fa-arrow-right ml-2"></i></a
+              >
+            </div>
+          </article>
+
+          <!-- Blog Post 2 -->
+          <article class="rounded-2xl shadow-lg overflow-hidden card-hover fade-in theme-transition">
+            <div class="h-48 bg-gradient-to-r from-green-500 to-teal-600 flex items-center justify-center">
+              <i class="fas fa-mobile-alt text-white text-4xl"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <span class="px-3 py-1 rounded-full text-xs font-medium" style="background-color: rgba(16, 185, 129, 0.1); color: var(--success-color);">Mobile Development</span>
+                <span class="text-sm ml-auto theme-transition" style="color: var(--text-secondary);">May 18, 2025</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 theme-transition" style="color: var(--text-primary);">
+                React Native vs Flutter: Which to Choose?
+              </h3>
+              <p class="mb-4 leading-relaxed theme-transition" style="color: var(--text-secondary);">
+                A comprehensive comparison of React Native and Flutter for
+                cross-platform mobile development.
+              </p>
+              <a
+                href="#"
+                class="font-semibold hover:underline inline-flex items-center"
+                style="color: var(--primary-color);"
+                >Read More <i class="fas fa-arrow-right ml-2"></i></a
+              >
+            </div>
+          </article>
+
+          <!-- Blog Post 3 -->
+          <article class="rounded-2xl shadow-lg overflow-hidden card-hover fade-in theme-transition">
+            <div class="h-48 bg-gradient-to-r from-purple-500 to-pink-600 flex items-center justify-center">
+              <i class="fas fa-database text-white text-4xl"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <span class="px-3 py-1 rounded-full text-xs font-medium" style="background-color: rgba(139, 92, 246, 0.1); color: #8b5cf6;">Database</span>
+                <span class="text-sm ml-auto theme-transition" style="color: var(--text-secondary);">May 15, 2025</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 theme-transition" style="color: var(--text-primary);">
+                Database Optimization Techniques
+              </h3>
+              <p class="mb-4 leading-relaxed theme-transition" style="color: var(--text-secondary);">
+                Learn essential database optimization techniques to improve
+                query performance and reduce load times.
+              </p>
+              <a
+                href="#"
+                class="font-semibold hover:underline inline-flex items-center"
+                style="color: var(--primary-color);"
+                >Read More <i class="fas fa-arrow-right ml-2"></i></a
+              >
+            </div>
+          </article>
+        </div>
+
+        <div class="text-center mt-12 fade-in">
+          <a
+            href="#"
+            class="btn-primary px-8 py-4 rounded-full font-semibold text-lg shadow-lg"
+          >
+            View All Posts
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 theme-transition" style="background-color: var(--bg-primary);">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12 fade-in gradient-text">
+          Get In Touch
+        </h2>
+
+        <div class="max-w-4xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-12">
+            <!-- Contact Info -->
+            <div class="fade-in">
+              <h3 class="text-2xl font-semibold mb-6 theme-transition" style="color: var(--text-primary);">Let's Work Together</h3>
+              <p class="mb-8 leading-relaxed theme-transition" style="color: var(--text-secondary);">
+                I'm always interested in new opportunities and exciting
+                projects. Whether you need a full-stack developer for your team
+                or want to discuss a freelance project, I'd love to hear from
+                you.
+              </p>
+
+              <div class="space-y-6">
+                <div class="flex items-center">
+                  <div class="w-12 h-12 rounded-2xl flex items-center justify-center mr-4" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.2));">
+                    <i class="fas fa-envelope" style="color: var(--primary-color);"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold theme-transition" style="color: var(--text-primary);">Email</h4>
+                    <p class="theme-transition" style="color: var(--text-secondary);">
+                      fuadmusa309@gmail.com
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-center">
+                  <div class="w-12 h-12 rounded-2xl flex items-center justify-center mr-4" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.2));">
+                    <i class="fas fa-phone" style="color: var(--success-color);"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold theme-transition" style="color: var(--text-primary);">Phone</h4>
+                    <p class="theme-transition" style="color: var(--text-secondary);">
+                      +251-989-92-50-94
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-center">
+                  <div class="w-12 h-12 rounded-2xl flex items-center justify-center mr-4" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0.2));">
+                    <i class="fas fa-map-marker-alt" style="color: #8b5cf6;"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold theme-transition" style="color: var(--text-primary);">Location</h4>
+                    <p class="theme-transition" style="color: var(--text-secondary);">
+                      Available Worldwide (Remote)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Social Links -->
+              <div class="mt-8">
+                <h4 class="font-semibold mb-4 theme-transition" style="color: var(--text-primary);">Follow Me</h4>
+                <div class="flex space-x-4">
+                  <a
+                    href="https://github.com/"
+                    class="w-12 h-12 rounded-2xl flex items-center justify-center hover:scale-110 transition-all duration-200 theme-transition"
+                    style="background-color: var(--bg-secondary); color: var(--text-secondary);"
+                  >
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/fuad-musa-a2154b367"
+                    class="w-12 h-12 rounded-2xl flex items-center justify-center hover:scale-110 transition-all duration-200 theme-transition"
+                    style="background-color: var(--bg-secondary); color: var(--text-secondary);"
+                  >
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                  <a
+                    href="https://twitter.com/Fuad_Musa_Adem"
+                    class="w-12 h-12 rounded-2xl flex items-center justify-center hover:scale-110 transition-all duration-200 theme-transition"
+                    style="background-color: var(--bg-secondary); color: var(--text-secondary);"
+                  >
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a
+                    href="https://t.me/Fuad_Musa"
+                    class="w-12 h-12 rounded-2xl flex items-center justify-center hover:scale-110 transition-all duration-200 theme-transition"
+                    style="background-color: var(--bg-secondary); color: var(--text-secondary);"
+                  >
+                    <i class="fab fa-telegram"></i>
+                  </a>
+                  <a
+                    href="https://facebook.com/fue.king.31"
+                    class="w-12 h-12 rounded-2xl flex items-center justify-center hover:scale-110 transition-all duration-200 theme-transition"
+                    style="background-color: var(--bg-secondary); color: var(--text-secondary);"
+                  >
+                    <i class="fab fa-facebook"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="fade-in">
+              <form id="contact-form" class="space-y-6">
+                <div>
+                  <label for="name" class="block text-sm font-medium mb-2 theme-transition" style="color: var(--text-primary);"
+                    >Full Name</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    class="form-input w-full px-4 py-3 rounded-xl transition-all duration-200"
+                  />
+                </div>
+
+                <div>
+                  <label for="email" class="block text-sm font-medium mb-2 theme-transition" style="color: var(--text-primary);"
+                    >Email Address</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="form-input w-full px-4 py-3 rounded-xl transition-all duration-200"
+                  />
+                </div>
+
+                <div>
+                  <label for="subject" class="block text-sm font-medium mb-2 theme-transition" style="color: var(--text-primary);"
+                    >Subject</label
+                  >
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    required
+                    class="form-input w-full px-4 py-3 rounded-xl transition-all duration-200"
+                  />
+                </div>
+
+                <div>
+                  <label for="message" class="block text-sm font-medium mb-2 theme-transition" style="color: var(--text-primary);"
+                    >Message</label
+                  >
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                    class="form-input w-full px-4 py-3 rounded-xl transition-all duration-200"
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  class="w-full gradient-bg text-white py-4 px-6 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 theme-transition" style="background-color: var(--bg-tertiary);">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-4 gradient-text">Fuad Musa</h3>
+            <p class="mb-6 theme-transition" style="color: var(--text-secondary);">
+              Creative Developer | Problem Solver
+            </p>
+
+            <div class="flex justify-center space-x-6 mb-8">
+              <a
+                href="https://github.com/"
+                class="hover:scale-110 transition-all duration-200 theme-transition"
+                style="color: var(--text-secondary);"
+              >
+                <i class="fab fa-github text-2xl"></i>
+              </a>
+              <a
+                href="https://linkedin.com/in/fuad-musa-a2154b367"
+                class="hover:scale-110 transition-all duration-200 theme-transition"
+                style="color: var(--text-secondary);"
+              >
+                <i class="fab fa-linkedin text-2xl"></i>
+              </a>
+              <a
+                href="https://twitter.com/Fuad_Musa_Adem"
+                class="hover:scale-110 transition-all duration-200 theme-transition"
+                style="color: var(--text-secondary);"
+              >
+                <i class="fab fa-twitter text-2xl"></i>
+              </a>
+              <a
+                href="https://t.me/Fuad_Musa"
+                class="hover:scale-110 transition-all duration-200 theme-transition"
+                target="_blank"
+                style="color: var(--text-secondary);"
+              >
+                <i class="fab fa-telegram text-2xl"></i>
+              </a>
+              <a
+                href="https://facebook.com/fue.king.31"
+                class="hover:scale-110 transition-all duration-200 theme-transition"
+                style="color: var(--text-secondary);"
+              >
+                <i class="fab fa-facebook text-2xl"></i>
+              </a>
+            </div>
+
+            <div class="border-t pt-8" style="border-color: var(--border-color);">
+              <p class="theme-transition" style="color: var(--text-secondary);">
+                &copy; 2025 Fuad Musa. All rights reserved. Built with ❤️ using
+                modern web technologies.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // Theme Toggle with proper icon switching
+      const themeToggle = document.getElementById("theme-toggle");
+      const html = document.documentElement;
+      const moonIcon = document.getElementById("theme-icon-moon");
+      const sunIcon = document.getElementById("theme-icon-sun");
+
+      // Check for saved theme preference or default to light mode
+      const savedTheme = localStorage.getItem("theme") || "light";
+      html.setAttribute("data-theme", savedTheme);
+      
+      // Update icons based on current theme
+      function updateThemeIcons(theme) {
+        if (theme === "dark") {
+          moonIcon.classList.add("hidden");
+          sunIcon.classList.remove("hidden");
+        } else {
+          moonIcon.classList.remove("hidden");
+          sunIcon.classList.add("hidden");
+        }
+      }
+
+      // Initialize icons
+      updateThemeIcons(savedTheme);
+
+      themeToggle.addEventListener("click", () => {
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+        updateThemeIcons(newTheme);
+      });
+
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Smooth Scrolling for Navigation Links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+            // Close mobile menu if open
+            mobileMenu.classList.add("hidden");
+          }
+        });
+      });
+
+      // Navbar Background on Scroll
+      const navbar = document.getElementById("navbar");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+          navbar.classList.add("navbar-blur");
+        } else {
+          navbar.classList.remove("navbar-blur");
+        }
+      });
+
+      // Intersection Observer for Fade-in Animation
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      // Observe all fade-in elements
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Project Filter with enhanced styling
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const projectCards = document.querySelectorAll(".project-card");
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          // Remove active class from all buttons
+          filterButtons.forEach((btn) => btn.classList.remove("active"));
+
+          // Add active class to clicked button
+          button.classList.add("active");
+
+          const filter = button.getAttribute("data-filter");
+
+          projectCards.forEach((card) => {
+            const category = card.getAttribute("data-category");
+
+            if (filter === "all" || category === filter) {
+              card.style.display = "block";
+              setTimeout(() => {
+                card.style.opacity = "1";
+                card.style.transform = "translateY(0)";
+              }, 100);
+            } else {
+              card.style.opacity = "0";
+              card.style.transform = "translateY(20px)";
+              setTimeout(() => {
+                card.style.display = "none";
+              }, 300);
+            }
+          });
+        });
+      });
+
+      // Initialize filter
+      document.querySelector('.filter-btn[data-filter="all"]').classList.add("active");
+
+      // Enhanced Typing Animation
+      const typingText = document.getElementById("typing-text");
+      const phrases = [
+        "Creative Developer | Problem Solver",
+        "Full-Stack Web Developer",
+        "Mobile App Developer",
+        "Information Systems Professional",
+        "Database Designer",
+      ];
+
+      let phraseIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+
+      function typeEffect() {
+        const currentPhrase = phrases[phraseIndex];
+
+        if (isDeleting) {
+          typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+          charIndex--;
+        } else {
+          typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+          charIndex++;
+        }
+
+        let typeSpeed = isDeleting ? 50 : 100;
+
+        if (!isDeleting && charIndex === currentPhrase.length) {
+          typeSpeed = 2000;
+          isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          typeSpeed = 500;
+        }
+
+        setTimeout(typeEffect, typeSpeed);
+      }
+
+      // Start typing effect after page load
+      window.addEventListener("load", () => {
+        setTimeout(typeEffect, 1000);
+      });
+
+      // Enhanced Contact Form
+      const contactForm = document.getElementById("contact-form");
+
+      contactForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(contactForm);
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+
+        // Show loading state
+        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+        submitButton.disabled = true;
+
+        try {
+          // Simulate form submission (replace with actual PHP endpoint)
+          await new Promise((resolve) => setTimeout(resolve, 1000));
+
+          // Show success message
+          submitButton.innerHTML = '<i class="fas fa-check mr-2"></i>Message Sent!';
+          submitButton.style.background = "linear-gradient(135deg, var(--success-color), #10b981)";
+
+          // Reset form
+          contactForm.reset();
+
+          // Reset button after 3 seconds
+          setTimeout(() => {
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+            submitButton.style.background = "";
+          }, 3000);
+        } catch (error) {
+          // Show error message
+          submitButton.innerHTML = '<i class="fas fa-exclamation-triangle mr-2"></i>Error! Try Again';
+          submitButton.style.background = "linear-gradient(135deg, var(--error-color), #ef4444)";
+
+          setTimeout(() => {
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+            submitButton.style.background = "";
+          }, 3000);
+        }
+      });
+
+      // Enhanced navigation link highlighting
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (window.scrollY >= sectionTop - 200) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+          }
+        });
+      });
+
+      // Performance optimization: Lazy load images
+      if ("IntersectionObserver" in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              if (img.dataset.src) {
+                img.src = img.dataset.src;
+                img.classList.remove("lazy");
+                imageObserver.unobserve(img);
+              }
+            }
+          });
+        });
+
+        document.querySelectorAll("img[data-src]").forEach((img) => {
+          imageObserver.observe(img);
+        });
+      }
+
+      // Contact form handling (same as before)
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const form = e.target;
+          const formData = new FormData(form);
+
+          fetch("submit_contact.php", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              alert(data.message);
+              if (data.status === "success") {
+                form.reset();
+              }
+            })
+            .catch(() => {
+              alert("Something went wrong. Please try again later.");
+            });
+        });
+
+      // Add smooth page transitions
+      window.addEventListener("load", () => {
+        document.body.classList.add("loaded");
+        
+        // Trigger progress bar animations
+        const progressBars = document.querySelectorAll(".progress-fill");
+        setTimeout(() => {
+          progressBars.forEach(bar => {
+            const width = bar.style.width;
+            bar.style.width = "0%";
+            setTimeout(() => {
+              bar.style.width = width;
+            }, 500);
+          });
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>
